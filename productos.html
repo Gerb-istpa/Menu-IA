@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/productos.css">
+</head>
+
+<body>
+    <!-- Navegación Principal -->
+    <nav class="main-nav">
+        <!-- Logo -->
+        <div class="main-nav__logo">
+            <div class="marco-imagen">
+                <img src="imagen/gerbdevSinfondo.png" alt="Logo de Gio" class="main-nav--logo__imagen">
+            </div>
+            <h1>La Taberna de Gio</h1>
+        </div>
+        <!-- Checkbox oculto para el toggle -->
+        <input type="checkbox" id="menu-toggle" class="main-nav__toggle">
+        <!-- Checkbox oculto para el toggle -->
+        <label for="menu-toggle" class="main-nav__toggle-label">
+            <div class="main-nav__hamburger">
+                <span class="main-nav__hamburger-line"></span>
+                <span class="main-nav__hamburger-line"></span>
+                <span class="main-nav__hamburger-line"></span>
+            </div>
+        </label>
+        <!-- Menú de navegación -->
+        <ul class="main-nav__menu">
+            <li class="main-nav__item">
+                <a href="index.html" class="main-nav__link main-nav__link--active">Inicio</a>
+            </li>
+            <li class="main-nav__item">
+                <a href="productos.html" class="main-nav__link">Productos</a>
+            </li>
+            <li class="main-nav__item">
+                <a href="servicios.html" class="main-nav__link">Servicios</a>
+            </li>
+            <li class="main-nav__item">
+                <a href="#acerca" class="main-nav__link">Acerca de</a>
+            </li>
+            <li class="main-nav__item">
+                <a href="#blog" class="main-nav__link">Blog</a>
+            </li>
+            <li class="main-nav__item">
+                <a href="#contacto" class="main-nav__link main-nav__link--button">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 📦 CONTENEDOR PRINCIPAL -->
+    <div class="container">
+        <!-- 🛍️ SECCIÓN DEL PRODUCTO -->
+        <section class="product-section">
+            <!-- 🎯 DEMO DEL BOX MODEL VISIBLE -->
+            <div class="box-model-demo">
+                Observa cómo este contenedor usa margin, border, padding y content del Box Model CSS.
+            </div>
+            <div class="product-grid">
+                <div class="image-gallery">
+                    <div class="main-image">
+                        Imagen Principal del Producto<br>
+                        <small>(400px altura con border y padding)</small>
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active"></div>
+                        <div class="thumbnail"></div>
+                        <div class="thumbnail"></div>
+                        <div class="thumbnail"></div>
+                    </div>
+                </div>
+                <!-- 📝 INFORMACIÓN DEL PRODUCTO -->
+                <div class="product-info">
+                    <h1 class="product-title">Laptop Gaming Pro X1</h1>
+                    <div class="price-section">
+                        <span class="current-price">$1,299.99</span>
+                        <span class="original-price">$1,599.99</span>
+                        <span class="discount-badge">-19% OFF</span>
+                    </div>
+                    <!-- 🏷️ TAGS CON INLINE-BLOCK -->
+                    <div class="product-tags">
+                        <span class="tag featured">Más Vendido</span>
+                        <span class="tag">Gaming</span>
+                        <span class="tag">Intel i7</span>
+                        <span class="tag">RTX 4060</span>
+                        <span class="tag">SSD 1TB</span>
+                    </div>
+                    <!-- ⭐ CARACTERÍSTICAS -->
+                    <div class="features">
+                        <h3>Características Principales</h3>
+                        <ul class="feature-list">
+                            <li class="feature-item">Procesador Intel Core i7-12700H</li>
+                            <li class="feature-item">Tarjeta Gráfica NVIDIA RTX 4060 8GB</li>
+                            <li class="feature-item">32GB RAM DDR5</li>
+                            <li class="feature-item">SSD NVMe 1TB</li>
+                            <li class="feature-item">Pantalla 15.6" Full HD 144Hz</li>
+                            <li class="feature-item">Teclado RGB retroiluminado</li>
+                        </ul>
+                    </div>
+                    <!-- 🛒 SECCIÓN DE COMPRA -->
+                    <div class="purchase-section">
+                        <div class="quantity-selector">
+                            <label for="quantity">Cantidad:</label>
+                            <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="5">
+                        </div>
+
+                        <button class="btn btn-primary" onclick="addToCart()">
+                            🛒 Agregar al Carrito
+                        </button>
+                        <button class="btn btn-secondary" onclick="addToWishlist()">
+                            ❤️ Lista de Deseos
+                        </button>
+
+                        <div id="cart-message" class="hidden"
+                            style="margin-top: 15px; padding: 10px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; color: #155724;">
+                            ✅ ¡Producto agregado al carrito!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 📊 ESPECIFICACIONES TÉCNICAS -->
+            <h3 style="margin: 30px 0 20px 0; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
+                Especificaciones Técnicas
+            </h3>
+            <table class="specs-table">
+                <tr>
+                    <th>Componente</th>
+                    <th>Especificación</th>
+                </tr>
+                <tr>
+                    <td>Procesador</td>
+                    <td>Intel Core i7-12700H (12 núcleos, hasta 4.7GHz)</td>
+                </tr>
+                <tr>
+                    <td>Memoria RAM</td>
+                    <td>32GB DDR5-4800MHz (expandible hasta 64GB)</td>
+                </tr>
+                <tr>
+                    <td>Almacenamiento</td>
+                    <td>SSD NVMe PCIe 4.0 1TB + Slot M.2 adicional</td>
+                </tr>
+                <tr>
+                    <td>Tarjeta Gráfica</td>
+                    <td>NVIDIA GeForce RTX 4060 8GB GDDR6</td>
+                </tr>
+                <tr>
+                    <td>Pantalla</td>
+                    <td>15.6" IPS Full HD (1920x1080) 144Hz</td>
+                </tr>
+                <tr>
+                    <td>Sistema Operativo</td>
+                    <td>Windows 11 Pro</td>
+                </tr>
+            </table>
+            <!-- 💬 SECCIÓN DE RESEÑAS -->
+            <div class="reviews-section">
+                <h3 style="margin-bottom: 20px; color: #2c3e50;">Reseñas de Clientes</h3>
+
+                <div class="review-item">
+                    <div class="reviewer-name">Carlos M.</div>
+                    <div class="review-rating">⭐ 5/5</div>
+                    <p>Excelente laptop para gaming. El rendimiento es increíble y la pantalla se ve fantástica.
+                        Recomendada 100%.</p>
+
+                    <div class="show-more-content" id="review-1-more">
+                        <strong>Detalles adicionales:</strong> La uso principalmente para juegos AAA y desarrollo. Corre
+                        todo en ultra sin problemas. La batería dura aproximadamente 6 horas en uso normal.
+                    </div>
+                    <button onclick="toggleMore('review-1-more')"
+                        style="background: none; border: none; color: #3498db; cursor: pointer; margin-top: 5px;">
+                        Ver más...
+                    </button>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-name">Ana L.</div>
+                    <div class="review-rating">⭐ 4/5</div>
+                    <p>Muy buena relación calidad-precio. El diseño es elegante y el rendimiento excelente para trabajo
+                        y entretenimiento.</p>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-name">Miguel R.</div>
+                    <div class="review-rating">⭐ 5/5</div>
+                    <p>La mejor compra que he hecho. Perfecta para streaming y gaming. El teclado RGB es una maravilla.
+                    </p>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+/* Contenedor principal del nav */
+.main-nav {
+    background-color: aqua;
+    position: sticky;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    /* Logo */
+    .main-nav__logo {
+        flex-shrink: 0;
+        background-color: chartreuse;
+        display: flex;
+        align-items: center;
+
+        .marco-imagen {
+            width: 70px;
+
+            .main-nav--logo__imagen {
+                width: 100%;
+            }
+        }
+
+        h1 {
+            /* background-color: aqua; */
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.025em;
+        }
+    }
+
+    /* MENÚ EN DESKTOP - HORIZONTAL */
+    .main-nav__menu {
+        /* background-color: bisque; */
+        display: flex;
+        gap: 0.5rem;
+        list-style: none;
+        margin-left: auto;
+
+        .main-nav__item {
+            position: relative;
+
+            .main-nav__link {
+                text-decoration: none;
+                color: inherit;
+                color: var(--gray-700);
+                font-weight: 500;
+                padding: 0.75rem 1rem;
+                border-radius: var(--border-radius);
+                transition: all var(--transition-speed) ease;
+                position: relative;
+                display: block;
+
+                &:hover {
+                    color: var(--primary-color);
+                    background-color: var(--gray-100);
+                }
+
+                /* verificar xk no se activ ala linea */
+                &:focus {
+                    outline: 2px solid var(--primary-color);
+                    outline-offset: 2px;
+                }
+            }
+
+            /* Enlace activo */
+            .main-nav__link--active {
+                color: var(--primary-color);
+                background-color: var(--gray-100);
+            }
+
+            .main-nav__link--active::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 2px;
+                background-color: var(--primary-color);
+                border-radius: 1px;
+            }
+
+            /* Botón especial */
+            .main-nav__link--button {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+                color: var(--white);
+                font-weight: 600;
+                margin-left: 0.5rem;
+                box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            }
+
+            .main-nav__link--button:hover {
+                background: linear-gradient(135deg, var(--primary-dark) 0%, #1e40af 100%);
+                color: var(--white);
+                transform: translateY(-3px);
+                box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+            }
+        }
+    }
+
+}

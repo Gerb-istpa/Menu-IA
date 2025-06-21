@@ -1,0 +1,315 @@
+/* 📦 CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    /* ✅ MARGIN PARA CENTRAR Y SEPARAR */
+    padding: 0 20px;
+    /* ✅ PADDING PARA ESPACIADO LATERAL */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* 🛍️ ÁREA DEL PRODUCTO - FLEXBOX CON BOX MODEL */
+    .product-section {
+        padding: 30px;
+
+        /* ✅ PADDING INTERNO GENEROSO */
+        /* display: block; ← Por defecto */
+        /* 🎨 EFECTOS VISUALES QUE MUESTRAN EL BOX MODEL */
+        .box-model-demo {
+            margin: 20px 0;
+            /* ✅ MARGIN PARA DEMOSTRACIÓN */
+            padding: 20px;
+            /* ✅ PADDING VISIBLE */
+            border: 3px dashed #e74c3c;
+            /* ✅ BORDER VISIBLE PARA ENSEÑAR */
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+
+            &::after {
+                content: "📦 Esta caja muestra el Box Model: margin + border + padding + content";
+                display: block;
+                /* ✅ DISPLAY BLOCK PARA PSEUDO-ELEMENTO */
+                font-weight: bold;
+                color: #2c3e50;
+                margin-top: 10px;
+                /* ✅ MARGIN EN PSEUDO-ELEMENTO */
+            }
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            /* Alternativa moderna a margin */
+            margin-bottom: 30px;
+
+            /* ✅ MARGIN PARA SEPARAR SECCIONES */
+            /* 🖼️ GALERÍA DE IMÁGENES */
+            .image-gallery {
+
+                /* display: block; ← Por defecto */
+                .main-image {
+                    width: 100%;
+                    /* ✅ WIDTH RESPONSIVE */
+                    height: 400px;
+                    background: #ecf0f1;
+                    border: 2px solid #bdc3c7;
+                    /* ✅ BORDER PARA DEFINIR LÍMITES */
+                    border-radius: 8px;
+                    margin-bottom: 15px;
+                    /* ✅ MARGIN PARA SEPARAR */
+                    display: flex;
+                    /* ✅ DISPLAY FLEX PARA CENTRAR CONTENIDO */
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2em;
+                    color: #7f8c8d;
+                }
+
+                .thumbnails {
+                    display: flex;
+                    gap: 10px;
+
+                    .thumbnail {
+                        width: 80px;
+                        /* ✅ WIDTH FIJO */
+                        height: 80px;
+                        /* ✅ HEIGHT FIJO */
+                        background: #ecf0f1;
+                        border: 2px solid #bdc3c7;
+                        /* ✅ BORDER */
+                        border-radius: 6px;
+                        /* display: block; ← Por defecto para divs */
+                        cursor: pointer;
+                        transition: border-color 0.3s;
+
+                        &:hover {
+                            border-color: #3498db;
+                        }
+                    }
+
+                    .active {
+                        border-color: #e74c3c;
+                        border-width: 3px;
+                        /* ✅ CAMBIO DE BORDER-WIDTH */
+                    }
+                }
+            }
+
+            /* 📝 INFO DEL PRODUCTO */
+            .product-info {
+
+                /* display: block; ← Por defecto */
+                .product-title {
+                    font-size: 2.2em;
+                    color: #2c3e50;
+                    margin-bottom: 15px;
+                    /* ✅ MARGIN PARA SEPARAR */
+                    /* display: block; ← Por defecto para h1 */
+                }
+
+                .price-section {
+                    margin-bottom: 25px;
+                    /* ✅ MARGIN PARA SEPARAR */
+                    padding: 20px;
+                    /* ✅ PADDING PARA DESTACAR */
+                    background: #f8f9fa;
+                    border: 1px solid #dee2e6;
+                    /* ✅ BORDER SUTIL */
+                    border-radius: 8px;
+
+                    .current-price {
+                        font-size: 2em;
+                        color: #e74c3c;
+                        font-weight: bold;
+                        /* display: block; ← Por defecto para span en este contexto */
+                    }
+
+                    .original-price {
+                        display: inline;
+                        /* ✅ INLINE PARA FLUIR CON TEXTO */
+                        font-size: 1.2em;
+                        color: #7f8c8d;
+                        text-decoration: line-through;
+                        margin-left: 15px;
+                        /* ✅ MARGIN PARA SEPARAR */
+                    }
+
+                    .discount-badge {
+                        display: inline-block;
+                        /* ✅ INLINE-BLOCK PARA CONTROL DE DIMENSIONES */
+                        background: #e74c3c;
+                        color: white;
+                        padding: 5px 12px;
+                        /* ✅ PADDING PARA ÁREA DEL BADGE */
+                        border-radius: 20px;
+                        font-size: 0.9em;
+                        font-weight: bold;
+                        margin-left: 10px;
+                        /* ✅ MARGIN PARA SEPARAR */
+                    }
+                }
+
+                /* 🏷️ TAGS Y BADGES */
+                .product-tags {
+                    margin: 20px 0;
+
+                    /* ✅ MARGIN PARA SEPARAR */
+                    /* display: block; ← Por defecto */
+                    .tag {
+                        display: inline-block;
+                        /* ✅ INLINE-BLOCK PARA TAGS EN LÍNEA */
+                        background: #ecf0f1;
+                        color: #2c3e50;
+                        padding: 6px 12px;
+                        /* ✅ PADDING PARA ÁREA DEL TAG */
+                        margin: 3px;
+                        /* ✅ MARGIN PEQUEÑO PARA SEPARAR */
+                        border: 1px solid #bdc3c7;
+                        /* ✅ BORDER SUTIL */
+                        border-radius: 15px;
+                        font-size: 0.9em;
+                    }
+
+                    .featured {
+                        background: #3498db;
+                        color: white;
+                        border-color: #3498db;
+                    }
+                }
+
+                /* ⭐ CARACTERÍSTICAS DEL PRODUCTO */
+                .features {
+                    margin: 25px 0;
+
+                    /* ✅ MARGIN VERTICAL */
+                    /* display: block; ← Por defecto */
+                    h3 {
+                        color: #2c3e50;
+                        margin-bottom: 15px;
+                        /* ✅ MARGIN PARA SEPARAR */
+                        padding-bottom: 8px;
+                        /* ✅ PADDING PARA ESPACIO ANTES DEL BORDER */
+                        border-bottom: 2px solid #3498db;
+                        /* ✅ BORDER COMO DECORACIÓN */
+                        /* display: block; ← Por defecto para h3 */
+                    }
+
+                    .feature-list {
+                        list-style: none;
+
+                        /* display: block; ← Por defecto para ul */
+                        .feature-item {
+                            padding: 8px 0;
+                            /* ✅ PADDING VERTICAL */
+                            border-bottom: 1px solid #ecf0f1;
+                            /* ✅ BORDER PARA SEPARADOR */
+                            /* display: list-item; ← Por defecto para li, pero sobrescrito */
+                            display: block;
+
+                            /* ✅ FORZAMOS BLOCK PARA CONTROL TOTAL */
+                            &:before {
+                                content: "✓ ";
+                                color: #27ae60;
+                                font-weight: bold;
+                                margin-right: 8px;
+                                /* ✅ MARGIN PARA SEPARAR ÍCONO */
+                            }
+                        }
+                    }
+                }
+
+                /* 🛒 BOTONES Y CONTROLES */
+                .purchase-section {
+                    margin-top: 30px;
+                    /* ✅ MARGIN PARA SEPARAR */
+                    padding: 25px;
+                    /* ✅ PADDING PARA DESTACAR */
+                    background: #f8f9fa;
+                    border: 2px solid #dee2e6;
+                    /* ✅ BORDER PARA DEFINIR ÁREA */
+                    border-radius: 10px;
+
+                    .quantity-selector {
+                        margin-bottom: 20px;
+
+                        /* ✅ MARGIN PARA SEPARAR */
+                        /* display: block; ← Por defecto */
+                        label {
+                            display: inline-block;
+                            /* ✅ INLINE-BLOCK PARA ALINEAR CON INPUT */
+                            font-weight: bold;
+                            margin-right: 10px;
+                            /* ✅ MARGIN PARA SEPARAR */
+                            width: 80px;
+                            /* ✅ WIDTH PARA ALINEACIÓN */
+                        }
+
+                        .quantity-input {
+                            display: inline-block;
+                            /* ✅ INLINE-BLOCK PARA FLUJO HORIZONTAL */
+                            width: 80px;
+                            /* ✅ WIDTH CONTROLADO */
+                            padding: 8px 12px;
+                            /* ✅ PADDING PARA ÁREA CLICKEABLE */
+                            border: 2px solid #bdc3c7;
+                            /* ✅ BORDER PARA DEFINIR INPUT */
+                            border-radius: 5px;
+                            text-align: center;
+                        }
+                    }
+
+                    .btn {
+                        display: inline-block;
+                        /* ✅ INLINE-BLOCK PARA BOTONES EN LÍNEA */
+                        padding: 15px 30px;
+                        /* ✅ PADDING GENEROSO PARA ÁREA CLICKEABLE */
+                        margin: 10px 5px;
+                        /* ✅ MARGIN PARA SEPARAR BOTONES */
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 1.1em;
+                        font-weight: bold;
+                        text-decoration: none;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        min-width: 150px;
+                        /* ✅ WIDTH MÍNIMO */
+                    }
+
+                    .btn-primary {
+                        background: #3498db;
+                        color: white;
+                        border: 2px solid #3498db;
+
+                        /* ✅ BORDER PARA EFECTO HOVER */
+                        &:hover {
+                            background: #2980b9;
+                            border-color: #2980b9;
+                            transform: translateY(-2px);
+                            /* Efecto que no afecta el box model */
+                        }
+                    }
+
+                    .btn-secondary {
+                        background: white;
+                        color: #3498db;
+                        border: 2px solid #3498db;
+
+                        /* ✅ BORDER PARA ESTILO OUTLINE */
+                        &:hover {
+                            background: #3498db;
+                            color: white;
+                        }
+                    }
+
+                    .hidden {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
